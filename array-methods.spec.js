@@ -18,3 +18,13 @@ describe('arrayCopier', () => {
     ]);
   });
 });
+
+describe('getFirstNItems', () => {
+  const stringArr = ['1', '2', '3', '4', '5'];
+  it('should return an array', () => {
+    expect(Array.isArray(getFirstNItems(stringArr, 3))).to.equal(true);
+  });
+  it('should return an array containing only the first N items', () => {
+    expect(getFirstNItems(stringArr, 2)).to.deep.equal(['1', '2', '3']);
+  });
+});
